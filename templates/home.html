@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Creativity Made Simple{% endblock %}
+
+{% block body %}
+
+{% include 'includes/header.html' %}
+<div class="container-md">
+
+{# TODO: I need to create the layout for the full home page as from XD file#}
+
+    <div class="row ">
+        <div class="col-lg-7 col-md-6 col-sm-12 mt-5">
+
+        </div>
+        <div class="col-lg-5 col-md-6 col-sm-12 mt-5">
+            {% for post in posts %}
+            <h6>{{post.location}}</h6>
+            <h2 class="text-uppercase">{{post.quote}}</h2>
+            <p class="text-justified">{{post.description}}</p>
+            <button type='button' class=" btn btn-success "> Read More </button>
+            <hr class="mb-5">
+        
+            {% endfor %}
+        </div>
+    </div>
+    
+</div>
+
+{% include 'includes/pricing.html' %}
+
+{% include 'includes/testimonial.html' %}
+
+
+{% endblock %} 

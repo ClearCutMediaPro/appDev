@@ -2,7 +2,7 @@ from django.db import models
 from sorl.thumbnail import ImageField
 
 # Create your models here.
-class Testimonial(models.Model):
+class Testimonial (models.Model):
     date = models.DateField(auto_now='auto')
     name = models.CharField(max_length=50, blank=False, null=False)
     quote = models.TextField(max_length=550, blank=False, null=False)

@@ -6,6 +6,6 @@ from testimonial.views import TestimonialPageView
 app_name = 'testimonial'
 
 urlpatterns = [
-    path('', TestimonialPageView.as_view(), name='testimonial'),
+    path('', views.TestimonialPageView.as_view(), name='testimonial'),
     
 ]

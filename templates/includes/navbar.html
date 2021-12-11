@@ -1,16 +1,18 @@
   {% load static %}
-  
+  {% load thumbnail %}
+
   {# TODO: Conclude if this is the best navbar for the job or if it needs changing using https://tailwindcomponents.com/ #}
-  <nav class="navbar navbar-light fixed-top bg-light opacity-85"  style="min-height: 100px;">
+  <nav class="navbar sticky-top navbar-light bg-dark-5 "  style="min-height: 90px;">
     <div class="container-sm">
-      <img src="{% static 'media/colorLogo.png'%}" alt="Colour Logo">
-      <a class="navbar-brand" href="#">Motion Magic Pictures</a>
+
+      <img src="{% static 'media/colorLogo.png'%}" alt="Colour Logo" width="70" height="70">
+      
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Motion Magic </h5>
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img class="text-center" src="{% static 'media/colorLogo.png'%}" alt="Colour Logo" width="100" height="100"> </h5>
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body  ">

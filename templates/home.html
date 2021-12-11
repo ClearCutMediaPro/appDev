@@ -1,35 +1,59 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load thumbnail %}
+
 {% block title %}Creativity Made Simple{% endblock %}
 
 {% block body %}
 
 {% include 'includes/header.html' %}
-<div class="container-md">
+
+<div class="container-fluid">
 
 {# TODO: I need to create the layout for the full home page as from XD file#}
 
-    <div class="row ">
-        <div class="col-lg-7 col-md-6 col-sm-12 mt-5">
-
+    <div class="row py-3 bg-gray-100">
+    
+        {% for post in posts %}
+    
+        <div class=" lg:py-12 lg:flex lg:justify-center">
+            <div class="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg lg:rounded-lg">
+                <div class="lg:w-1/2">
+                    <div class="h-64 bg-cover lg:rounded-lg lg:h-full" style="background-image:url('{{post.image.url}}')"></div>
+                </div>
+                <div class="py-12 px-6 max-w-xl lg:max-w-5xl lg:w-1/2">
+                    <h6 class="text-gray-600">{{post.location}}</h6>
+                    <h2 class="text-3xl text-gray-800 font-bold text-uppercase">{{post.quote}}</h2>
+                    <p class="mt-4 text-gray-600">{{post.description|truncatewords:100}}</p>
+                    <div class="mt-8">
+                        <a href="{% url 'feed:detail' post.id %}" class="bg-gray-900 text-gray-100 px-5 py-3 font-semibold rounded"> Read More</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-5 col-md-6 col-sm-12 mt-5">
-            {% for post in posts %}
-            <h6>{{post.location}}</h6>
-            <h2 class="text-uppercase">{{post.quote}}</h2>
-            <p class="text-justified">{{post.description}}</p>
-            <button type='button' class=" btn btn-success "> Read More </button>
-            <hr class="mb-5">
+    
+        {% endfor %} 
+    
+    </div>
+
+    <div class="row py-3 bg-gray-100">
+        <div class="container-md" style="min-height: 450pt;">
+
+            {% for testimonial in testimonials %}
+        
+            {{testimonial.date}}
+            <h1>{{testimonial.name}}</h1>
+            <h1>{{testimonial.quote}}</h1> 
+            <img src="{{testimonial.image.url}}" alt="">
         
             {% endfor %}
         </div>
     </div>
     
+
 </div>
 
-{% include 'includes/pricing.html' %}
 
-{% include 'includes/testimonial.html' %}
+
 
 
 {% endblock %} 

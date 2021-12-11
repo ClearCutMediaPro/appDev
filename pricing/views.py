@@ -1,3 +1,4 @@
-from django.shortcuts import render
+from typing import Text
+from django.db import models
+from django.views.generic import ListView,DetailView,TemplateView
 
-# Create your views here.

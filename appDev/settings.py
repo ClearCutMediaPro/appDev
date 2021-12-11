@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'testimonial',
     'feed',
     'about',
+    'profiles',
     'portfolio',
     'services',
     'contact',
@@ -55,6 +56,7 @@ INSTALLED_APPS = [
     
     
     'sorl.thumbnail',
+    
     
 ]
 
